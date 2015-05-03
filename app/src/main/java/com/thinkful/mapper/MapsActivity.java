@@ -227,13 +227,13 @@ public class MapsActivity extends FragmentActivity implements ConnectionCallback
                 Log.i(TAG, "Removing old marker");
                 mMarker.remove();
             }
-            mMarker = mMap.addMarker(new MarkerOptions()
+            Marker marker = mMap.addMarker(new MarkerOptions()
                     .position(currentLatLng)
                     .title("My Current Location")
                     .icon(BitmapDescriptorFactory.fromResource(R.drawable.android_small
                     ))
                     .snippet("I am at a cozy place"));
-            mMarker.showInfoWindow();
+            marker.showInfoWindow();
             final CameraUpdate update = CameraUpdateFactory.newLatLngZoom(currentLatLng, 18);
             if (animate) {
                 Handler handler = new Handler();
